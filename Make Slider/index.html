@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Slider</title>
     <style>
-        *{
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    background-color: #222;    
-    }
-        html,body{
+        background-color: #222;
+      }
+      html,
+      body {
         height: 100%;
         width: 100%;
-        }
-        div{
-            height: 600px;
-            width: 600px;
-        }
-        img{
-            object-fit: cover;
-            height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+      }
+      div {
+        height: 600px;
+        width: 900px;
+        margin: auto;
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <img src="" alt="">
+      <img
+        src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds"
+        alt=""
+      />
     </div>
 
     <script>
-        let arr = ['https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg','https://cdn-fastly.thetruthaboutcars.com/media/2022/07/19/9176050/qotd-has-your-hate-blossomed-into-love.jpg?size=720x845&nocrop=1','https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds'];
-        let index = 0;
-        setInterval(()=>{
-            document.querySelector('img').src = arr[index];
-            index = (index + 1) % arr.length;
-        },2000)
+      let arr = [
+        "https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg",
+        "https://cdn-fastly.thetruthaboutcars.com/media/2022/07/19/9176050/qotd-has-your-hate-blossomed-into-love.jpg?size=720x845&nocrop=1",
+        "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds",
+      ];
+      let index = 0;
+      setInterval(()=>{
+        document.querySelector("img").src = arr[index]
+        index = (index + 1) % arr.length;
+      }, 2000);
     </script>
-</body>
+  </body>
 </html>
