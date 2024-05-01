@@ -9,40 +9,99 @@
             background-color: #222;
             color: aliceblue;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0%;
+            padding: 0%;
         }
-        span{
+        body{
             display: flex;
+        }
+        #second{
+            margin: auto;
+            text-align: center;
+        }
+        button{
+            margin: auto;
+            display: flex;
+            background-color: #fff;
+            color: #222;
+            padding: 7px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 1%;
+            font-weight: 800;
+        }
+        div{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;  
+            height: 95vh;
+        }
+        .class2{
+            width: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .class2 img{
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <span>
-        <h1 id="hours">0:</h1>
-        <h1 id="minutes">0: </h1>
-    <h1 id="second">59</h1>
-    </span>
+
+    <div>
+        <span>
+            <h1 id="second">59</h1>
+            <button>Start</button>
+        </span>
+    </div>
+    <div class="class2">
+        <img src="https://www.shutterstock.com/shutterstock/photos/619342988/display_1500/stock-photo-inspirational-motivation-quote-the-best-view-comes-after-the-hardest-climb-on-nature-background-619342988.jpg" alt="">
+    </div>
+    
     <script>
         let second = 59;
-        let minutes = 0;
-        let hours = 0;
+        document.querySelector('button').addEventListener('click',()=>{
         setInterval(()=>{
             document.querySelector('#second').innerHTML = second;
             second--;
             if(second == 0){
                 second = 59
-                document.querySelector('#minutes').innerHTML = minutes;  
-                minutes++;
-                    if(minutes==60){
-                        minutes = 0;
-                        document.querySelector('#hours').innerHTML = hours;
-                        hours++;
-                        if(hours == 24){
-                            hours = 0;
-                        }
-                    }  
             }
         },1000)
+       })
 
+       let arr = [
+       'https://www.shutterstock.com/shutterstock/photos/619342988/display_1500/stock-photo-inspirational-motivation-quote-the-best-view-comes-after-the-hardest-climb-on-nature-background-619342988.jpg',
+       'https://i.pinimg.com/originals/c6/35/e4/c635e47ede6ec2c36f4ec27193219d2c.jpg',
+       'https://i.pinimg.com/736x/65/a5/9b/65a59b5ac6800305d0a11b234e3a71f5.jpg',
+       'https://thumbs.dreamstime.com/b/inspirational-quotes-best-view-comes-hardest-climb-inspirational-quotes-life-quote-130362922.jpg',
+       'https://quotefancy.com/media/wallpaper/3840x2160/6916482-Dane-Hatchell-Quote-Life-can-turn-on-a-dime-and-sometimes-the-turn.jpg',
+       'https://quotefancy.com/media/wallpaper/3840x2160/1655505-Sylvia-Hatchell-Quote-It-s-good-to-give-some-of-the-kids-a-chance.jpg'
+       ]
+      let img = document.querySelector('img');
+      let my = Math.floor(Math.random()*5);
+      if(my == 0){
+        img.src = arr[0]
+      }
+      else if(my == 1){
+        img.src = arr[1]
+      }
+      else if(my == 2){
+        img.src = arr[2]
+      }
+      else if(my == 3){
+        img.src = arr[3]
+      }
+      else if(my == 4){
+        img.src = arr[4]
+      }
+      else if(my == 5){
+        img.src = arr[5]
+      }
     </script>
 </body>
-</html>
+</html> 
